@@ -10,3 +10,7 @@ function filterByRating(
 ): { title: string; rating: number }[] {
   return items.filter((item) => item.rating >= 4);
 }
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  return arrays.reduce((prev, current) => [...prev, ...current], []);
+}
