@@ -1,0 +1,19 @@
+{
+  "name": "l2-typescript",
+  "version": "1.0.0",
+  "description": "Assignment",
+  "main": "solution.ts",
+  "scripts": {
+    "dev": "ts-node-dev solution.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaselParvejHrid/L2-typescript.git"
+  },
+  "author": "Rasel Parvej",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaselParvejHrid/L2-typescript/issues"
+  },
+  "homepage": "https://github.com/RaselParvejHrid/L2-typescript#readme"
+}
