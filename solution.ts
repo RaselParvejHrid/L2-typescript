@@ -64,3 +64,29 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
     products[0]
   );
 }
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+
+function getDayType(day: Day): string {
+  if (day < Day.Saturday) {
+    return "Weekday";
+  }
+  return "Weekend";
+}
+
+async function squareAsync(n: number): Promise<number> {
+  return new Promise<number>((resolve, reject) => {
+    setTimeout(() => {
+      if (n < 0) reject("Negative Number Not Supported!");
+      resolve(n * n);
+    }, 1000);
+  });
+}
