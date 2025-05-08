@@ -55,13 +55,13 @@ let user: User = {
 
 <ol>
 <li>
-On Re-declaration with same identifier, two interfaces just merge.
+On Re-declaration with same identifier, interfaces just merge.
 
 ```ts
 interface A { x: number; }
 interface A { y: string; }  // Merges with the first 'A'
 ```
-On the other side, Redeclaration with same identifier is a syntax error for two <b>type</b> alias.
+On the other side, Redeclaration with same identifier is a syntax error for <b>type</b> alias.
 
 ```ts
 type A = { x: number; };
@@ -122,6 +122,56 @@ I hope, this answers your question on 'Differences between Types and Interfaces 
 
 <p>Yes, TypeScript = JavaScript + Type Safety.</p>
 
-</p>
+<p>But that doesn’t mean we get type safety for free just by using TypeScript. We still have to put in some effort to achieve it. What kind of effort? We need to explicitly type our variables, functions, objects, and so on to enjoy the full benefits of type safety.</p>
+
+<p>That said, the TypeScript compiler is quite intelligent. In many cases, we don’t need to do everything manually. Thanks to type inference, TypeScript can often figure out the types for us automatically.</p>
+
+<p>Let's explore some examples.</p>
+
+We can do as follows in TypeScript, while declaring a variable, thus achieving type safety on the following variables.
+
+```ts
+let name : string = "Alice"; // We explicitly specify: string
+let age : number = 30;       // We explicitly specify: number
+let isActive : boolean = true; // We explicitly specify: boolean
+```
+
+
+But, note that, we are not only declaring a variable and its type here, we are also assigning to it a value on the same statement.
+
+<p>Type Inference is tied with assignment of a value while declaring it.</p>
+
+Because, we are assigning a value to the variable in the same statement the variable is being declared in, thanks to <b>Type Inference</b> capability of TypeScript, we can omit specifying the type of the variable, as bellow.
+
+```ts
+let name = "Alice"; // TypeScript infers: string
+let age = 30;       // TypeScript infers: number
+let isActive = true; // TypeScript infers: boolean
+```
+
+<p>TypeScript infers the type of the variable from the assigned value in the same statement. If we intend the type of the variable to be exactly the type of the assigned value, we can accept Type Inference and omit explicitly specifying type.</p>
+
+<p>Type Inference is not only associated with variable declaration. We can see it in  cases of Function Return Type, Array Type, Destructuring of Arrays and Objects etc. </p>
+
+<p>So, we have explained what <b>Type Inference</b> is. Now, let's discuss its usefulness.</p>
+
+<ol>
+<li>
+The obvious advantage is 'Less Code'. It reduces Verbosity of code, without compromising Type Safety, especially when the type is a long string of symbols and characters.
+</li>
+
+<li>
+Code Verbosity costs time too. A developer may need much time to infer a type; but TypeScript is much faster than him/her. So, type inference improves developer's productivity, with no slightest loss of type safety.
+</li>
+
+<li>
+This developer productivity is present not only while writing the code for the first time, but also while refactoring it. Thanks to Type Inference, the responsibility of re-inferring types is on TypeScript, not on the developer.
+</li>
+
+</ol>
+
+So, we should always be aware of Type Inference; and take advantage of it every single time it is offered.
+
+
 </div>
 
