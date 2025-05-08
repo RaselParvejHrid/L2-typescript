@@ -80,7 +80,7 @@ type ID = number; // Alias for a Primitive Type
 
 <li>
 <b>interface</b>s are extensible, as in OOP Inheritance. <br/>
-We can combine more than one types into a single type, using operators like <b>|</b> and <b>&</b>; but this cannot be called 'Extending' in terms of OOP Inheritance. No clear hierarchical relationship is established.
+We can combine more than one types into a single type, using operators like <b>|</b> and <b>&</b>; but this cannot be called 'Extending' in terms of OOP Inheritance. It's more like creating a new type from two or more types, rather than inheriting and extending a type.
 
 ```ts
 interface Person {
@@ -95,6 +95,10 @@ interface Employee extends Person {
 
 type BaseType = { id: number };
 type UserType = BaseType & { name: string; }
+/*
+It's more like creating a new type from two types,
+namely, the type BaseType, and the unnamed type { name: string; }
+*/
 ```
 </li>
 
@@ -109,5 +113,15 @@ I hope, this answers your question on 'Differences between Types and Interfaces 
 
 <div id="type-inference">
 <h2>Type Inference and Its Advantages</h2>
+<p>Now we will discuss 'What is Type Inference in TypeScript?', and the advantages of Type Inference, for us, the Developers.</p>
+
+
+<p>Why do we JavaScript developers use TypeScript?</p>
+
+<p>Because JavaScript—an amazing and powerful language—surprisingly lacks type safety. For small web scripts or tiny programs, this may seem like a blessing or not much of a concern. But as the codebase grows, we begin to feel the need for stronger structure and safety in data types. That’s exactly why we use TypeScript. Being a superset of JavaScript, it offers the best of both worlds: all of JavaScript, plus type safety.</p>
+
+<p>Yes, TypeScript = JavaScript + Type Safety.</p>
+
+</p>
 </div>
 
